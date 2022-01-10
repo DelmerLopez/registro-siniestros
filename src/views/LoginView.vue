@@ -6,6 +6,7 @@
             <input v-model="contrasenia" placeholder="contrasenia"/>
             <input type="submit" value="Iniciar Sesión" />
         </form>
+        +5+TRAK0Gkg1bgqmfUTjsnTdDyY37YWnPPRkg86mygjxoLc6uukg8ONm5ZwyrX9zZgi3nuVaj+KiaCsywWQ5+w==
         {{ mensajeError }}
     </div>
 </template>
@@ -15,7 +16,7 @@ import axios from 'axios';
 
 export default {
     data() {
-        return{
+        return {
             usuario: '',
             contrasenia: '',
             mensajeError: ''
@@ -26,8 +27,7 @@ export default {
             let req = {
                 "Usuario": this.usuario,
                 "Contrasenia": this.contrasenia
-            };
-            
+            };            
             axios.post('https://localhost:44382/api/Evaluador/validarCredenciales', req)
             .then(data => {
                 if(data.status == 200) {
